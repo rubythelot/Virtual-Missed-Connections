@@ -4,58 +4,56 @@
  * https://firebase.google.com/docs/web/module-bundling
  * https://firebase.google.com/docs/database/web/start
  */
+
 console.log('ccssxxxx');
 
-//import all:
-import { initializeApp } from 'firebase/app';
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import { getDatabase,ref, set, onValue } from "firebase/database";
 
-import { getDatabase, ref, set, update, push, onValue } from 'firebase/database';
+const firebaseConfig = {
+  apiKey: "AIzaSyAgEamajsINgabUXMOcGSGfJPfs7KGRVEQ",
+  authDomain: "missed-connections-3574a.firebaseapp.com",
+  projectId: "missed-connections-3574a",
+  storageBucket: "missed-connections-3574a.appspot.com",
+  messagingSenderId: "627787519711",
+  appId: "1:627787519711:web:6aa5d8e9b50d20e6dafb6a",
+  measurementId: "G-3KBBN7JEFQ",
+  databaseURL: "https://missed-connections-3574a-default-rtdb.firebaseio.com/"
+};
 
 // Initialize Firebase
-const config = {
-  apiKey: "AIzaSyD9Wra4wPC0Vz21wIi7LJOFEpfwr5oRd1M",
-  authDomain: "dt-webadvanced-js.firebaseapp.com",
-  databaseURL: "https://dt-webadvanced-js.firebaseio.com",
-  projectId: "dt-webadvanced-js",
-  storageBucket: "dt-webadvanced-js.appspot.com",
-  messagingSenderId: "339163927955"
-};
-const firebaseApp = initializeApp(config);
-const db = getDatabase(firebaseApp);
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
-const st_ref = ref( db, "/students");
+const db = getDatabase(app);
 
-console.log(st_ref);
+const db_ref = ref( db, "/messages");
 
-const button = document.getElementById('GetUsers');
+const button = document.getElementById('GetSubmissions');
 
 button.addEventListener("click", processCall);
 
-function processCall() {
-
-    const st_ref = ref(db, 'students');
-    onValue( st_ref, (snapshot) => {
-        const data = snapshot.val();
-        document.getElementById("Output").innerHTML = JSON.stringify(data) + "sdsd";
-        console.log('first email: ', data[Object.keys(data)[0]]['email'])
+function processCall(e) {
+  e.preventDefault();
+  const db_ref = ref(db, 'messages');
+  onValue( db_ref, (snapshot) => {
+    const data = snapshot.val();
+    document.getElementById("Output").innerHTML = JSON.stringify(data) + "sdsd";
     });
     console.log('done');
-
 }
 
 
-const form = document.getElementById('createUser')
-form.addEventListener("submit", processSubmit);
+const form = document.getElementById('createSub');
+form.addEventListener("submit", createSubmissions);
 
-async function processSubmit(e) {
-  e.preventDefault();
-  let jsonObject = {
-    first_name: form.first_name.value,
-    last_name: form.last_name.value,
-    email: form.email.value
-  };
-
-  const status_insert = push(ref(db, 'students' ), jsonObject );
-  console.log('inserted', status_insert.key);
-
+function createSubmissions(userId, name, email, imageUrl) {
+  const db = getDatabase();
+  set(ref(db, 'users/' + userId), {
+    username: name,
+    email: email,
+    profile_picture : imageUrl
+  });
 }

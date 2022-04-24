@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>The Parsons Web Project - Ajax</title>
+  <title>Virtual Missed Connections</title>
   <meta name="description" content="The Dummy Page">
   <meta name="author" content="Parsons">
 
@@ -15,36 +15,50 @@
 <body>
   <header></header>
 
-  <section>
+  <div class = "main">
+  <div id="subBox">
 
     <!-- this is a test h1 block -->
     <h1 id="title">
-      "Main Title"
+    <!-- this is a test form block -->
+    <p dir="ltr" style="text-align: center;">sending<br />
+      a&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;message<br />
+      from&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;the<br />
+      void</p>
     </h1>
 
-    <!-- this is a test form block -->
-    <h2>Below is a New Ajax Block</h2>
+    <form name="missedConnections" action="send" id="createSub">
+      <label for="content">Who do you wait for?:</label>
+      <textarea type="text" name="content" id="content" rows="10" cols="30">I miss</textarea> 
 
-    <button id="GetUsers">Request Users List</button>
+      <label for="username">What's your username?:</label>
+      <input type="text" name="username" id="username">
+      <button type="submit" id="createSub">SHOUT</button>
 
 
-    <form name="createUser" action="#" id="createUser">
-      <label for="firstName">Type your first name here:</label>
-      <input type="text" name="first_name" id="firstName">
-
-      <label for="lastName">Type your last name here:</label>
-      <input type="text" name="last_name" id="lastName">
-
-      <label for="Email">Type your email here:</label>
-      <input type="text" name="email" id="Email">
-
-      <button type="submit" id="createUser">CREATE</button>
     </form>
 
-    <div id="Output"></div>
-  </section>
+    <br>
+    <br>
+    <br>
+
+  <div class="links">
+    <p>
+    <a href="/submissions.html">See previous submissions</a>
+  </p>
+  </div>
+
+  <div class="made-by">
+    <p>
+    <a href="https://instagram.com/being_on_line">by Ruby Thelot</a>
+  </p>
+  </div>
+
+  </div>
+</div>
 
   <script src="dist/js/scripts.js"></script>
+  
 </body>
 </html>
 

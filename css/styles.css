@@ -1,18 +1,60 @@
-body {
-  font-family: arial;
+html, body {
+  font-family: Helvetica, sans-serif;
+  height: 100%;
 }
 
-section {
-  width: 70%;
+.main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#subBox {
+  height: 700px;
   max-width: 780px;
   margin: 0 auto;
   padding: 30px;
   border: 1px solid lightgrey;
-  background-color: #fafafa;
+ /* background-image: radial-gradient(circle, grey, white); */
 }
+
+.links {
+  font-size: large;
+}
+
+/* unvisited link */
+a:link {
+  color: red;
+}
+
+/* visited link */
+a:visited {
+  color: rgb(208, 227, 208);
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
+
+#GetSubmissions {
+  padding: 10px;
+  width: 100%;
+  display: block;
+  margin-top: 50px;
+  align-items: center;
+}
+
 h1 {
   text-align: center;
-  color: green;
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
 }
 ul {
   display: block;
@@ -33,7 +75,6 @@ ul li {
 body ul li span {
   font-family: arial;
   font-size: 14px;
-  color: #5a5a5a;
   text-align: center;
 }
 body ul li img {

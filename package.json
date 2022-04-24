@@ -1,5 +1,5 @@
 {
-  "name": "first-try",
+  "name": "missed-connection-website",
   "version": "1.0.0",
   "description": "my first try",
   "main": "gulpfile.js",
@@ -7,8 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp"
   },
-  "author": "",
+  "author": "Ruby Thelot",
   "license": "ISC",
+  "type": "module",
   "devDependencies": {
     "@babel/core": "^7.17.9",
     "@babel/preset-env": "^7.16.11",
@@ -31,6 +32,15 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
-    "firebase": "^9.6.11"
-  }
+    "firebase": "^9.6.11",
+    "jquery": "^3.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Virtual-Missed-Connections"
+  },
+  "keywords": [
+    "missedconnections",
+    "javascript"
+  ]
 }
