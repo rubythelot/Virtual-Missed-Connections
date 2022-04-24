@@ -40,7 +40,7 @@ function processCall(e) {
   const db_ref = ref(db, 'messages');
   onValue( db_ref, (snapshot) => {
     const data = snapshot.val();
-    document.getElementById("Output").innerHTML = JSON.stringify(data) + "sdsd";
+    document.getElementById("Output").innerHTML = JSON.stringify(data);
     });
     console.log('done');
 }
