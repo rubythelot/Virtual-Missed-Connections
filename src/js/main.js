@@ -10,7 +10,7 @@ console.log('ccssxxxx');
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getDatabase,ref, set, onValue } from "firebase/database";
+import { getDatabase,ref, set, onValue, push } from "firebase/database";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAgEamajsINgabUXMOcGSGfJPfs7KGRVEQ",
@@ -49,11 +49,18 @@ function processCall(e) {
 const form = document.getElementById('createSub');
 form.addEventListener("submit", createSubmissions);
 
-function createSubmissions(userId, name, email, imageUrl) {
+async function createSubmissions(username, content) {
   const db = getDatabase();
-  set(ref(db, 'users/' + userId), {
-    username: name,
-    email: email,
-    profile_picture : imageUrl
+  const postListRef = ref(db, 'messages');
+  const newPostRef = push(postListRef);
+  set(newPostRef, {
+    username: form.username.value,
+    message: form.content.value
+  })
+  .then(() => {
+    console.log("SUCCESS!");
+  })
+  .catch((error) => {
+    console.log("ERROR!");
   });
 }
