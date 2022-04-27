@@ -31,7 +31,7 @@ const db = getDatabase(app);
 
 const db_ref = ref( db, "/messages");
 
-const button = document.getElementById('GetSubmissions');
+const button = document.getElementById('getSubmissions');
 
 button.addEventListener("click", processCall);
 
@@ -46,9 +46,29 @@ function processCall(e) {
 }
 
 
-const form = document.getElementById('createSub');
-form.addEventListener("submit", createSubmissions);
+const form = document.getElementById('createSubmissionsForm');
+form.addEventListener('submit', createSubmissions);
 
+async function createSubmissions(e) {
+  e.preventDefault();
+  const db = getDatabase();
+  const postListRef = ref(db, 'messages');
+  const newPostRef = push(postListRef);
+  set(newPostRef, {
+    username: form.username.value,
+    message: form.content.value
+  })
+  .then(() => {
+    console.log("SUCCESS!");
+  })
+  .catch((error) => {
+    console.log("ERROR!");
+  });
+
+}
+
+
+/*
 async function createSubmissions(username, content) {
   const db = getDatabase();
   const postListRef = ref(db, 'messages');
@@ -64,3 +84,4 @@ async function createSubmissions(username, content) {
     console.log("ERROR!");
   });
 }
+*/
