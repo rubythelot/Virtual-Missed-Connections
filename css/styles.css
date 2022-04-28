@@ -9,13 +9,14 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* border: 1px solid lightgrey; */
 }
 #subBox {
-  height: 700px;
+  height: 800px;
   max-width: 780px;
-  margin: 0 auto;
+  margin: 5px;
   padding: 30px;
-  border: 1px solid lightgrey;
+  /* border: 1px solid lightgrey; */
  /* background-image: radial-gradient(circle, grey, white); */
 }
 
@@ -44,6 +45,14 @@ a:active {
 }
 
 #GetSubmissions {
+  padding: 25px;
+  width: 100%;
+  display: block;
+  margin-top: 50px;
+  align-items: center;
+}
+
+#pageSwitch {
   padding: 25px;
   width: 100%;
   display: block;
@@ -109,8 +118,8 @@ form {
   margin: 0 auto;
 }
 form input[type=text], form input[type=password], form input[type=number] {
-  width: 50%;
-  padding: 10px;
+  width: 75%;
+  padding: 5px;
 }
 button {
   padding: 10px;

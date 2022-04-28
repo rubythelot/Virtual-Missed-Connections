@@ -41,8 +41,13 @@ function processCall(e) {
   onValue( db_ref, (snapshot) => {
     const data = snapshot.val();
     document.getElementById("Output").innerHTML = JSON.stringify(data);
-    });
+    })
+  .then(() => {
     console.log('done');
+  })
+  .catch(() => {
+    console.log('error');
+  });
 }
 
 
@@ -67,21 +72,18 @@ async function createSubmissions(e) {
 
 }
 
-
 /*
-async function createSubmissions(username, content) {
-  const db = getDatabase();
-  const postListRef = ref(db, 'messages');
-  const newPostRef = push(postListRef);
-  set(newPostRef, {
-    username: form.username.value,
-    message: form.content.value
-  })
-  .then(() => {
-    console.log("SUCCESS!");
-  })
-  .catch((error) => {
-    console.log("ERROR!");
-  });
+const switchbutton = document.getElementById('pageSwitch');
+switchbutton.addEventListener('click', switchPage);
+let x = document.getElementById("subBox");
+console.log(switchbutton);
+
+function switchPage() {
+  if(x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
 }
 */
+
