@@ -13,9 +13,10 @@
 </head>
 
 <body>
+  <canvas id="bg">
   <header></header>
 
-  <div class = "main">
+  <div class ="main">
 
   <!-- Main element -->
 
@@ -31,10 +32,10 @@
     </h1>
 
     <form name="missedConnections" action="#" id="createSubmissionsForm">
-      <label for="content">Who do you wait for?:</label>
+      <label for="content">Who do you wait for?</label>
       <textarea type="text" name="content" id="content" rows="10" cols="30">I miss</textarea> 
 
-      <label for="username">What was your username?:</label>
+      <label for="username">What was your username?</label>
       <input type="text" name="username" id="username">
       <button type="submit" id="createSub">SHOUT</button>
 
@@ -48,10 +49,14 @@
       <div id="Output"></div>
 
    
-  <div class="made-by">
+  <div id="hideButton">
+    <button id="seeSignature">See who made this</button>
+  </div>
+  <div id="signature" class="made-by">
     <p>
     <a href="https://instagram.com/being_on_line">by Ruby Thelot</a>
   </p>
+  
   </div>
 
   </div>
@@ -97,11 +102,10 @@
 -->
 </div>
 
-<button id="pageSwitch">See other submissions</button>
-
 
   <script src="dist/js/scripts.js"></script>
-  
+
+</canvas>
 </body>
 </html>
 

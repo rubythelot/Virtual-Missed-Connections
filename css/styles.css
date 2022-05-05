@@ -20,6 +20,10 @@ html, body {
  /* background-image: radial-gradient(circle, grey, white); */
 }
 
+#signature {
+  display: none;
+}
+
 .links {
   font-size: large;
 }
