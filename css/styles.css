@@ -3,13 +3,6 @@ html, body {
   height: 100%;
 }
 
-/*
-canvas{
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-*/
 
 .main {
   height: 100%;
@@ -158,4 +151,33 @@ form .error {
     padding: 5px;
     margin: 20px 0;
     background: white;
+}
+
+#locationOutput {
+  border: 1px solid #ccc;
+  word-wrap: break-word;
+  padding: 5px;
+  margin: 20px 0;
+  background: white;
+}
+
+#getLocation {
+  padding: 10px;
+  width: 50%;
+  display: block;
+  margin-top: 20px;
+}
+
+#getSubmissions {
+  padding: 10px;
+  width: 50%;
+  display: block;
+  margin-top: 20px;
+}
+
+#seeSignature {
+  padding: 10px;
+  width: 50%;
+  display: block;
+  margin-top: 20px;
 }

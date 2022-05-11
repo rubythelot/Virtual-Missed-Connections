@@ -1,5 +1,7 @@
 // webpack.config.js
 
+const Dotenv = require('dotenv-webpack');
+
 module.exports = {
   output: {
     filename: 'scripts.js',
@@ -14,4 +16,7 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new Dotenv()
+  ]
 };
